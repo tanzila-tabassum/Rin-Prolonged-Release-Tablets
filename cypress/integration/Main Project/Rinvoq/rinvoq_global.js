@@ -1,0 +1,55 @@
+///<reference types="cypress" />
+const pause_2 = Cypress.env('pause_2')
+//const pause = Cypress.env('pause_2')
+describe('Rinvoq user journey', function() {
+    it('Visits Rinvoq', function() {
+      cy.visit('https://www.rinvoq.eu') 
+      Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+      })
+      cy.viewport(1280, 800)
+      cy.wait(pause_2)
+      cy.get('.cookie-toolbar__close > span').click()
+      cy.wait(pause_2)
+      cy.reload()
+      cy.wait(pause_2)
+      //cy.get(':nth-child(3) > .btn').click()
+      cy.get('#acceptCookieButton > .btn').click()
+      cy.wait(pause_2)
+      cy.get('.country-select__selector').click()
+      cy.wait(pause_2)
+      cy.get('[style="max-height: 418px;"] > :nth-child(1) > :nth-child(1)').click()
+      cy.wait(pause_2)
+      cy.get('[style="max-height: 418px;"]').scrollTo('bottom')
+      cy.wait(pause_2)
+      cy.get(':nth-child(28) > .cs-parent').click()
+      cy.wait(pause_2)
+      cy.get('.col-lg-5 > .button-link > .btn').click()
+      cy.wait(pause_2)
+      cy.get('.col-lg-7 > .button-link > .btn').click()
+      cy.wait(pause_2)
+      cy.get(':nth-child(3) > .image-container > .lightbox-link > .img-fluid').click()
+      cy.wait(pause_2)
+      cy.get('.lb-close').click()
+      cy.wait(pause_2)
+      cy.get(':nth-child(2) > .nav-link').click()
+      cy.wait(pause_2)
+      cy.get(':nth-child(3) > .nav-link').click()
+      cy.wait(pause_2)
+      cy.get(':nth-child(4) > .nav-link').click()
+      cy.wait(pause_2)
+      cy.get(':nth-child(5) > .nav-link').click()
+      cy.wait(pause_2)
+      cy.get(':nth-child(6) > .nav-link').click()
+      cy.wait(pause_2)
+      cy.get(':nth-child(7) > .nav-link').click()
+      cy.wait(pause_2)
+      cy.get('#download01').click()
+      //cy.screenshot() 
+
+
+
+
+
+    })
+})
